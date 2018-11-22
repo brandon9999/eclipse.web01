@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jeus-ejb-dd xmlns="http://www.tmaxsoft.com/xml/ns/jeus" version="6.0">
+    <module-info/>
+    <beanlist>
+        <jeus-bean>
+            <ejb-name>GuestbookBean</ejb-name>
+            <export-name>GuestbookBean</export-name>
+            <export-port>0</export-port>
+            <single-vm-only>false</single-vm-only>
+            <local-invoke-optimize>true</local-invoke-optimize>
+            <thread-max>50</thread-max>
+            <object-management>
+                <bean-pool>
+                    <pool-min>15</pool-min>
+                    <pool-max>100</pool-max>
+                </bean-pool>
+                <connect-pool>
+                    <pool-min>35</pool-min>
+                    <pool-max>100</pool-max>
+                </connect-pool>
+                <capacity>10000</capacity>
+                <passivation-timeout>-1</passivation-timeout>
+                <disconnect-timeout>-1</disconnect-timeout>
+            </object-management>
+        </jeus-bean>
+    </beanlist>
+</jeus-ejb-dd>
