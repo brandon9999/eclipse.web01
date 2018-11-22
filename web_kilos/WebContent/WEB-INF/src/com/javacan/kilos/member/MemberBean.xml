@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<or-mapping>
+    <bean-class>com.javacan.kilos.member.MemberBean</bean-class>
+    <table-name>MEMBER</table-name>
+    
+    <field-mapping>
+        <property-name>id</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>ID</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>true</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>password</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>PASSWORD</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+    
+    <field-mapping>
+        <property-name>name</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>NAME</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>email</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>EMAIL</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>model</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>MODEL</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>address</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>ADDRESS</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>phone</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>PHONE</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>roleCode</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>ROLECODE</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+</or-mapping>

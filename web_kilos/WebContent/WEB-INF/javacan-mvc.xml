@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<configuration>
+    <template-list>
+        <template-info name="main" uri="/mainTemplate.jsp">
+            <template-map name="header" uri="/layout/commonPart/header.jsp" />
+            <template-map name="menu" uri="/layout/commonPart/mainMenu.jsp" />
+            <template-map name="submenu" uri="/layout/commonPart/subMenu.jsp" />
+            <template-map name="footer" uri="/layout/commonPart/footer.jsp" />
+        </template-info>
+        <template-info name="error" uri="/errorTemplate.jsp">
+            <template-map name="menu" uri="/layout/empty.jsp" />
+        </template-info>
+    </template-list>
+    
+    <global-view>
+        <view-info name="main" uri="/main/mainView.jsp" useTemplate="main" />
+        <view-info name="loginForm" uri="/login/loginFormView.jsp" useTemplate="main" />
+        <view-info name="registerForm" uri="/register/registerForm.jsp" useTemplate="main"/>
+        <view-info name="noAuthority" uri="/error/noAuthority.jsp" useTemplate="main"/>
+        
+        <view-info name="boardList" uri="/board/list.jsp" useTemplate="main"/>
+        <view-info name="boardWriteForm" uri="/board/writeForm.jsp" useTemplate="main"/>
+        <view-info name="boardWrite" uri="/board/write.jsp" useTemplate="main"/>
+        <view-info name="boardUpdateForm" uri="/board/updateForm.jsp" useTemplate="main"/>
+        <view-info name="boardUpdateForm" uri="/board/update.jsp" useTemplate="main"/>
+        <view-info name="boardRead" uri="/board/read.jsp" useTemplate="main"/>
+        <view-info name="boardDelete" uri="/board/delete.jsp" useTemplate="main"/>
+        
+        <view-info name="greeting" uri="/viewGreeting.jsp" useTemplate="main" />
+        <view-info name="error" uri="/error/error.jsp" />
+        <view-info name="step1" uri="/test/step1.jsp" useTemplate="main"/>
+        <view-info name="step2" uri="/test/step2.jsp" useTemplate="main"/>
+        <view-info name="step3" uri="/test/step3.jsp" useTemplate="main"/>
+        <view-info name="step4" uri="/test/step4.jsp" useTemplate="main"/>
+        <view-info name="step5" uri="/test/step5.jsp" useTemplate="main"/>
+        <view-info name="invalidTestStep" uri="/test/invalidStep.jsp" />
+        
+    </global-view>
+    
+    <command name="main" type="com.javacan.kilos.command.MainCommand" />
+
+    <command name="registerForm" type="com.javacan.kilos.command.RegisterFormCommand" />
+    <command name="register" type="com.javacan.kilos.command.RegisterCommand">
+        <command-view>
+            <view-info name="success" uri="/register/registerSuccess.jsp" useTemplate="main" />
+        </command-view>
+    </command>
+
+    <command name="loginForm" type="com.javacan.kilos.command.LoginFormCommand" />
+    <command name="login" type="com.javacan.kilos.command.LoginCommand">
+        <command-view>
+            <view-info name="success"
+                       uri="/kilos/main.do"
+                       redirect="true"/>
+        </command-view>
+    </command>
+    
+    <command name="logout" type="com.javacan.kilos.command.LogoutCommand">
+        <command-view>
+            <view-info name="main" uri="/kilos/main.do" redirect="true"/>
+        </command-view>
+    </command>
+    
+    <command name="noticeList" type="com.javacan.kilos.command.NoticeListCommand" />
+    <command name="noticeRead" type="com.javacan.kilos.command.NoticeReadCommand" />
+    <command name="noticeWriteForm" type="com.javacan.kilos.command.NoticeWriteFormCommand" />
+    <command name="noticeWrite" type="com.javacan.kilos.command.NoticeWriteCommand" />
+    <command name="noticeDelete" type="com.javacan.kilos.command.NoticeDeleteCommand" />
+    <command name="noticeUpdateForm" type="com.javacan.kilos.command.NoticeUpdateFormCommand" />
+    <command name="noticeUpdate" type="com.javacan.kilos.command.NoticeUpdateCommand" />
+    
+    <command name="boardList" type="com.javacan.kilos.command.BoardListCommand" />
+    <command name="boardRead" type="com.javacan.kilos.command.BoardReadCommand" />
+    <command name="boardWriteForm" type="com.javacan.kilos.command.BoardWriteFormCommand" />
+    <command name="boardWrite" type="com.javacan.kilos.command.BoardWriteCommand" />
+    <command name="boardDelete" type="com.javacan.kilos.command.BoardDeleteCommand" />
+    <command name="boardUpdateForm" type="com.javacan.kilos.command.BoardUpdateFormCommand" />
+    <command name="boardUpdate" type="com.javacan.kilos.command.BoardUpdateCommand" />
+    
+    <command name="greeting" type="com.javacan.kilos.command.GreetingCommand" />
+    
+    <command name="step1" type="com.javacan.test.command.Step1Command" />
+    <command name="step2" type="com.javacan.test.command.Step2Command" />
+    <command name="step3" type="com.javacan.test.command.Step3Command" />
+    <command name="step4" type="com.javacan.test.command.Step4Command" />
+    <command name="step5" type="com.javacan.test.command.Step5Command" />
+    
+    <mapping uri="/main.do" name="main" />
+    
+    <mapping uri="/loginForm.do" name="loginForm" />
+    <mapping uri="/login.do" name="login" />
+    <mapping uri="/logout.do" name="logout" />
+    
+    <mapping uri="/registerForm.do" name="registerForm" />
+    <mapping uri="/register.do" name="register" />
+    
+    <mapping uri="/notice/list.do" name="noticeList" />
+    <mapping uri="/notice/read.do" name="noticeRead" />
+    <mapping uri="/notice/writeForm.do" name="noticeWriteForm" />
+    <mapping uri="/notice/write.do" name="noticeWrite" />
+    <mapping uri="/notice/delete.do" name="noticeDelete" />
+    <mapping uri="/notice/updateForm.do" name="noticeUpdateForm" />
+    <mapping uri="/notice/update.do" name="noticeUpdate" />
+    
+    <mapping uri="/board/list.do" name="boardList" />
+    <mapping uri="/board/read.do" name="boardRead" />
+    <mapping uri="/board/writeForm.do" name="boardWriteForm" />
+    <mapping uri="/board/write.do" name="boardWrite" />
+    <mapping uri="/board/delete.do" name="boardDelete" />
+    <mapping uri="/board/updateForm.do" name="boardUpdateForm" />
+    <mapping uri="/board/update.do" name="boardUpdate" />
+    
+    <mapping uri="/greeting.do" name="greeting" />
+    
+    <mapping uri="/step1.do" name="step1" />
+    <mapping uri="/step2.do" name="step2" />
+    <mapping uri="/step3.do" name="step3" />
+    <mapping uri="/step4.do" name="step4" />
+    <mapping uri="/step5.do" name="step5" />
+    
+    <work-flow-set>
+        <work-flow name="test" errorView="invalidTestStep">
+            <work-flow-step uri="/step1.do" from="3"/>
+            <work-flow-step uri="/step2.do" from="1,3"/>
+            <work-flow-step uri="/step3.do" from="2" />
+            <work-flow-step uri="/step4.do" from="3"/>
+            <work-flow-step uri="/step5.do" from="2,3,4"/>
+        </work-flow>
+    </work-flow-set>
+    
+    <aa-manager class="com.javacan.kilos.ana.AAManagerImpl"
+                noAuthenticationView="loginForm"
+                noAuthorizationView="noAuthority" />
+    
+</configuration>

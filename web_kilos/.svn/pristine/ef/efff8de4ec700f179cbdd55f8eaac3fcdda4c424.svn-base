@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+
+    <servlet>
+        <servlet-name>SystemPropertySetter</servlet-name>
+        <servlet-class>com.javacan.common.servlet.SystemPropertySetterServlet</servlet-class>
+        <init-param>
+            <param-name>com.javacan.common.module.logging.loggers</param-name>
+            <param-value>kilos</param-value>
+        </init-param>
+        <init-param>
+            <param-name>kilos.level</param-name>
+            <param-value>warn</param-value>
+        </init-param>
+        <init-param>
+            <param-name>kilos.handlers</param-name>
+            <param-value>com.javacan.common.module.logging.impl.ConsoleHandler</param-value>
+        </init-param>
+        <init-param>
+            <param-name>autopost.module.impl.DefaultDBConnectionMgr.password</param-name>
+            <param-value>dpsvpdlwl</param-value>
+        </init-param>
+        <init-param>
+            <param-name>kilos</param-name>
+            <param-value>com.javacan.common.module.config.impl.FileConfigFactory</param-value>
+        </init-param>
+        <init-param>
+            <param-name>kilos.ConfigFile</param-name>
+            <!-- 
+            <param-value>D:/DevHome/AppWorkspace/kisWorkspace/work_kilos/WebContent/kilos.config</param-value>            
+            <param-value>D:/DevHome/AppWorkspace/kisWorkspace/work_kilos/WebContent/WEB-INF/kilos.config</param-value>
+             -->
+			<param-value>/home2/subi/eclipse_web/web_kilos/WebContent/kilos.config</param-value>			                         
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>com.javacan.mvc.ControllerServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    
+    <taglib>
+        <taglib-uri>/WEB-INF/tlds/javacan-mvc-template.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/javacan-mvc-template.tld</taglib-location>
+    </taglib>
+    
+</web-app>

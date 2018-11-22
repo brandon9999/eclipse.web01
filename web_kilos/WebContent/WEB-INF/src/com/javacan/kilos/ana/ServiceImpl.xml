@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<or-mapping>
+    <bean-class>com.javacan.kilos.ana.ServiceImpl</bean-class>
+    <table-name>SERVICE</table-name>
+    
+    <field-mapping>
+        <property-name>code</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>CODE</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>true</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>name</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>NAME</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>uri</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>URI</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>stopped</property-name>
+        <property-type>boolean</property-type>
+        <field-name>STOPPED</field-name>
+        <field-type>CHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>grantedType</property-name>
+        <property-type>int</property-type>
+        <field-name>GRANTEDTYPE</field-name>
+        <field-type>integer</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>description</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>DESCRIPTION</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+</or-mapping>

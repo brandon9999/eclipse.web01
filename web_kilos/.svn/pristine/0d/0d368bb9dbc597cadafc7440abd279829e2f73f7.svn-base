@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<or-mapping>
+    <bean-class>com.javacan.kilos.ana.RoleImpl</bean-class>
+    <table-name>ROLE</table-name>
+    
+    <field-mapping>
+        <property-name>code</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>CODE</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>true</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>name</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>NAME</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+    
+    <field-mapping>
+        <property-name>description</property-name>
+        <property-type>java.lang.String</property-type>
+        <field-name>DESCRIPTION</field-name>
+        <field-type>VARCHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+    <field-mapping>
+        <property-name>restricted</property-name>
+        <property-type>boolean</property-type>
+        <field-name>RESTRICTED</field-name>
+        <field-type>CHAR</field-type>
+        <pk-field>false</pk-field>
+    </field-mapping>
+
+</or-mapping>
