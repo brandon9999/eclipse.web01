@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-services-config xmlns="http://www.tmaxsoft.com/xml/ns/jeus">
+	<service>
+		<service-name>DocLitEchoService</service-name>
+		<!--  서비스가 가지게 되는 타겟 name space이다. 서비스 고유의 name space를 설정하여 다른 서비스와의 논리적인 구별 기준이 된다. -->
+		<target-namespace>urn:DocLitService</target-namespace>
+		<!-- 생성하고자 하는 출력 WSDL 파일의 이름이다. -->
+		<output-wsdl-file>wsdl/DocLitEchoService.wsdl</output-wsdl-file>
+		<!-- 생성하고자 하는 출력 매핑 파일의 이름이다. -->
+		<output-jaxrpc-mapping-file>DocLitEchoService-mapping.xml</output-jaxrpc-mapping-file>
+		<!-- 생성될 서비스의 메시징 스타일(messaging style)을 정의한다. rpc, document, wrapped 세 가지 중 하나를 선택한다. 기본 설정은 wrapped이다. -->
+		<style>wrapped</style>
+		<!-- 서비스 엔드포인트 인터페이스(Service Endpoint Interface)를 설정한다. -->
+		<interface>
+			<!-- 백엔드(back-end)로 동작하는 Java 클래스의 이름을 표시한다. -->
+			<endpoint-interface-class>jeustest.webservices.java2wsdl.doclit.Echo</endpoint-interface-class>
+			<!-- 서비스로 공개하는 오퍼레이션들 각각의 추가적인 설정을 기술한다. -->
+			<operation>
+				<!-- 설정하고자 하는 오퍼레이션 이름을 값으로 가진다. -->
+			    <java-method-name>echoString</java-method-name>
+			    <!-- wsdl-name>echoWsdlString</wsdl-name -->
+			    <!-- 오퍼레이선의 SOAP-ACTION을 설정한다 -->
+                <soap-action>hokeAction</soap-action>
+                <!-- 요청-응답 메커니즘이 아닌 원-웨이(one-way) 호출을 허용하는 설정이다. 
+                	비동기 원-웨이 호출은 클라이언트가 SOAP 응답을 받지 않으며, 결함(fault)이나 예외 상황(exception)이 
+                	발생했을 경우에도 마찬가지로 응답을 받지 않는다. 기본값은 falseo이다. -->
+			    <one-way>false</one-way>
+			</operation>
+		</interface>
+	</service>
+</web-services-config>

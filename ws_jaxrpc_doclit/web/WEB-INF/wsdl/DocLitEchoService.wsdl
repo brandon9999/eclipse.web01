@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DocLitEchoService" targetNamespace="urn:DocLitService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:DocLitService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="urn:DocLitService" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:DocLitService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <complexType name="echoString">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="echoStringResponse">
+        <sequence>
+          <element name="result" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="echoString_double">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+          <element name="String_2" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="echoString_doubleResponse">
+        <sequence>
+          <element name="result" nillable="true" type="string"/></sequence></complexType>
+      <element name="echoString" type="tns:echoString"/>
+      <element name="echoStringResponse" type="tns:echoStringResponse"/>
+      <element name="echoString_double" type="tns:echoString_double"/>
+      <element name="echoString_doubleResponse" type="tns:echoString_doubleResponse"/></schema>
+  </types>
+  <message name="Echo_echoStringResponse">
+    <part name="result" element="tns:echoStringResponse">
+    </part>
+  </message>
+  <message name="Echo_echoString">
+    <part name="parameters" element="tns:echoString">
+    </part>
+  </message>
+  <message name="Echo_echoString_doubleResponse">
+    <part name="result" element="tns:echoString_doubleResponse">
+    </part>
+  </message>
+  <message name="Echo_echoString_double">
+    <part name="parameters" element="tns:echoString_double">
+    </part>
+  </message>
+  <portType name="Echo">
+    <operation name="echoString">
+      <input message="tns:Echo_echoString">
+    </input>
+      <output message="tns:Echo_echoStringResponse">
+    </output>
+    </operation>
+    <operation name="echoString_double">
+      <input message="tns:Echo_echoString_double">
+    </input>
+      <output message="tns:Echo_echoString_doubleResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="EchoBinding" type="tns:Echo">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="echoString">
+      <soap:operation soapAction="hokeAction"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoString_double">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DocLitEchoService">
+    <port name="EchoPort" binding="tns:EchoBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

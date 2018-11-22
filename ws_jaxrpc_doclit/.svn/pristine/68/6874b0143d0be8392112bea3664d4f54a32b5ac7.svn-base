@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:ns2="http://java.sun.com/xml/ns/persistence" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd" version="1.1">
+    <package-mapping>
+        <package-type>jeustest.webservices.java2wsdl.doclit</package-type>
+        <namespaceURI>urn:DocLitService</namespaceURI>
+    </package-mapping>
+    <package-mapping>
+        <package-type>jeustest.webservices.java2wsdl.doclit</package-type>
+        <namespaceURI>urn:DocLitService</namespaceURI>
+    </package-mapping>
+    <java-xml-type-mapping>
+        <java-type>jeustest.webservices.java2wsdl.doclit.Echo_echoString_ResponseStruct</java-type>
+        <root-type-qname xmlns:typeNS="urn:DocLitService">typeNS:echoStringResponse</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>result</java-variable-name>
+            <xml-element-name>result</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>jeustest.webservices.java2wsdl.doclit.Echo_echoString_RequestStruct</java-type>
+        <root-type-qname xmlns:typeNS="urn:DocLitService">typeNS:echoString</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>String_1</java-variable-name>
+            <xml-element-name>String_1</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>jeustest.webservices.java2wsdl.doclit.Echo_echoString_double_RequestStruct</java-type>
+        <root-type-qname xmlns:typeNS="urn:DocLitService">typeNS:echoString_double</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>String_1</java-variable-name>
+            <xml-element-name>String_1</xml-element-name>
+        </variable-mapping>
+        <variable-mapping>
+            <java-variable-name>String_2</java-variable-name>
+            <xml-element-name>String_2</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <java-xml-type-mapping>
+        <java-type>jeustest.webservices.java2wsdl.doclit.Echo_echoString_double_ResponseStruct</java-type>
+        <root-type-qname xmlns:typeNS="urn:DocLitService">typeNS:echoString_doubleResponse</root-type-qname>
+        <qname-scope>complexType</qname-scope>
+        <variable-mapping>
+            <java-variable-name>result</java-variable-name>
+            <xml-element-name>result</xml-element-name>
+        </variable-mapping>
+    </java-xml-type-mapping>
+    <service-interface-mapping>
+        <service-interface>jeustest.webservices.java2wsdl.doclit.DocLitEchoService</service-interface>
+        <wsdl-service-name xmlns:serviceNS="urn:DocLitService">serviceNS:DocLitEchoService</wsdl-service-name>
+        <port-mapping>
+            <port-name>EchoPort</port-name>
+            <java-port-name>EchoPort</java-port-name>
+        </port-mapping>
+    </service-interface-mapping>
+    <service-endpoint-interface-mapping>
+        <service-endpoint-interface>jeustest.webservices.java2wsdl.doclit.Echo</service-endpoint-interface>
+        <wsdl-port-type xmlns:portTypeNS="urn:DocLitService">portTypeNS:Echo</wsdl-port-type>
+        <wsdl-binding xmlns:bindingNS="urn:DocLitService">bindingNS:EchoBinding</wsdl-binding>
+        <service-endpoint-method-mapping>
+            <java-method-name>echoString</java-method-name>
+            <wsdl-operation>echoString</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:wsdlMsgNS="urn:DocLitService">wsdlMsgNS:Echo_echoString</wsdl-message>
+                    <wsdl-message-part-name>String_1</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wsdlMsgNS="urn:DocLitService">wsdlMsgNS:Echo_echoStringResponse</wsdl-message>
+                <wsdl-message-part-name>result</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+        <service-endpoint-method-mapping>
+            <java-method-name>echoString_double</java-method-name>
+            <wsdl-operation>echoString_double</wsdl-operation>
+            <wrapped-element></wrapped-element>
+            <method-param-parts-mapping>
+                <param-position>0</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:wsdlMsgNS="urn:DocLitService">wsdlMsgNS:Echo_echoString_double</wsdl-message>
+                    <wsdl-message-part-name>String_1</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <method-param-parts-mapping>
+                <param-position>1</param-position>
+                <param-type>java.lang.String</param-type>
+                <wsdl-message-mapping>
+                    <wsdl-message xmlns:wsdlMsgNS="urn:DocLitService">wsdlMsgNS:Echo_echoString_double</wsdl-message>
+                    <wsdl-message-part-name>String_2</wsdl-message-part-name>
+                    <parameter-mode>IN</parameter-mode>
+                </wsdl-message-mapping>
+            </method-param-parts-mapping>
+            <wsdl-return-value-mapping>
+                <method-return-value>java.lang.String</method-return-value>
+                <wsdl-message xmlns:wsdlMsgNS="urn:DocLitService">wsdlMsgNS:Echo_echoString_doubleResponse</wsdl-message>
+                <wsdl-message-part-name>result</wsdl-message-part-name>
+            </wsdl-return-value-mapping>
+        </service-endpoint-method-mapping>
+    </service-endpoint-interface-mapping>
+</java-wsdl-mapping>
