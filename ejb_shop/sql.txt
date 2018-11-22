@@ -1,0 +1,46 @@
+create table users(
+id varchar2(8) primary key,
+name varchar2(10),
+passwd varchar2(8),
+userlevel number(2));
+
+create table category(
+name varchar2(8) primary key,
+text varchar2(4000));
+
+create table item(
+id varchar2(8) primary key,
+categoryname varchar2(8) not null,
+name varchar2(10),
+price number,
+text varchar2(4000),
+regdate date,
+constraint item_category_fk foreign key (categoryname) references category(name)
+);
+
+create table buylog(
+seq number primary key,
+userid varchar2(8) not null,
+itemid varchar2(8) not null,
+count number,
+state varchar2(10) not null,
+regdate date,
+constraint buylog_user_fk foreign key (userid) references users(id),
+constraint buylog_item_fk foreign key (itemid) references item(id)
+);
+
+create sequence buylog_seq;
+
+insert into category values ( '장난감', '어린이들의 장난감 코너입니다.');
+insert into category values ( '컴퓨터', '컴퓨터 관련 코너입니다.');
+insert into category values ( '의류', '의류 코너입니다.');
+
+insert into item values ( 'j-001', '장난감', '루돌프인형', 5000, '크리스마스의 선물', sysdate );
+insert into item values ( 'j-002', '장난감', '춤추는곰', 7000, '70년대 부터 생산된 제품', sysdate );
+insert into item values ( 'c-001', '컴퓨터', '팬티엄4', 2000000, '인텔프로세서사용', sysdate);
+insert into item values ( 'w-001', '의류', '빨강내복', 3000, '효도선물',sysdate);
+insert into item values ( 'w-002', '의류', '산타옷', 20000, '이벤트는 산타옷과 함께', sysdate);
+
+insert into users values ( 'urstory', '김성박', 'u1234', 3);
+insert into users values ( 'admin', '김인섭', '1234', 3);
+commit;

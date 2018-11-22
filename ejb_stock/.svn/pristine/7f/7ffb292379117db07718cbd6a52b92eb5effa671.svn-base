@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jeus-ejb-dd xmlns="http://www.tmaxsoft.com/xml/ns/jeus"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tmaxsoft.com/xml/ns/jeus http://www.tmaxsoft.com/xml/ns/jeus/jeus-ejb-dd.xsd">
+    <beanlist>
+        <jeus-bean>
+            <ejb-name>Stock</ejb-name>
+            <export-name>stock</export-name>
+        </jeus-bean>
+    </beanlist>
+</jeus-ejb-dd>
