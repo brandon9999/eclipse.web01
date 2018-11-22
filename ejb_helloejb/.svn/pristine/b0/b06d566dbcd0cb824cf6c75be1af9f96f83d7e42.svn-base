@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="helloejb">
+    <property environment="env"/>
+    <property name="work_temp2.location" value="../work_temp2"/>
+    <property name="ECLIPSE_HOME" value="../../../eclipse/eclipse-jee-helios-SR2-win32-x86_64"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="Tmax JEUS 6.0 [Tmax JEUS 6.0].libraryclasspath">
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/system/jeus.jar"/>
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/system/jeusapi.jar"/>
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/system/javaee.jar"/>
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/system/jeusutil.jar"/>
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/system/jeusmp.jar"/>
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/system/jaxws-rt.jar"/>
+        <pathelement location="../../../TmaxSoft/JEUS6.0.06_eclipse/lib/client/clientcontainer.jar"/>
+    </path>
+    <path id="helloejb.classpath">
+        <pathelement location="helloejb"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Tmax JEUS 6.0 [Tmax JEUS 6.0].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="helloejb"/>
+        <copy includeemptydirs="false" todir="helloejb">
+            <fileset dir="ejbModule">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="helloejb"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build">
+    	<jar destfile="D:/DevHome/AppWorkspace/kisWorkspace/web_helloejb/WebContent/WEB-INF/lib/helloejb.jar">
+    		<fileset dir="helloejb"/>
+    	</jar>
+   	</target>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="helloejb" source="${source}" target="${target}">
+            <src path="ejbModule"/>
+            <classpath refid="helloejb.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${work_temp2.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${work_temp2.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>
